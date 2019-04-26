@@ -7,10 +7,18 @@ do
 	if [[ -e log.txt ]]
 	then
 		cur=$( tail -n 1 log.txt )
-		if [[ $cur != $prev ]] 
+		if [[ $cur != $prev ]]
 		then
-			echo $cur
+		
+			if [[ "$cur" =~ ^-?[0-9]+$ ]];then	
+
+				echo "cur: " $cur
+				prev=$cur
+			else 
+			
+				echo "spoiler alert"
 			prev=$cur
+			fi
 		fi
 	fi
 done
