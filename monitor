@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 prev=a
 
 while ((1))
